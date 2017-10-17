@@ -11,5 +11,6 @@ Feel free to edit `GENRES` and `PAGES_PER_GENRE`. `GENRES` is a list of url slug
 
 Run:
 ```
+pipenv install
 pipenv run python scrape.py  
 ```
