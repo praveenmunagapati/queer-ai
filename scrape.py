@@ -7,6 +7,7 @@ PARSER = "html.parser"
 DATA_FILE = "literotica.csv"
 URL_TEMPLATE = "https://www.literotica.com/c/%s/%d-page"
 GENRES = ["science-fiction-fantasy", "bdsm-stories", "erotic-couplings", "celebrity-stories", "gay-sex-stories", "lesbian-sex-stories", "transsexuals-crossdressers", "non-human-stories"]
+PAGES_PER_GENRE = 2
 data = {}
 
 if os.path.isfile(DATA_FILE):
@@ -32,7 +33,7 @@ def scrape_list_page(page):
         except urllib2.HTTPError as e:
             print(e)
 
-def scrape_genre(genre_slug, page_limit = 2):
+def scrape_genre(genre_slug, page_limit = PAGES_PER_GENRE):
     count = 0
     while count < page_limit:
         count += 1
