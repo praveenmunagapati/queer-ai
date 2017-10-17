@@ -12,3 +12,5 @@ name = "pypi"
 [packages]
 
 "bs4" = "*"
+tensorflow-serving-api = "*"
+matplotlib = "*"
