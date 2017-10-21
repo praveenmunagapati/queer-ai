@@ -3,13 +3,11 @@ import csv
 import re
 
 INPUT_FILE = "data/literotica.csv"
-TRAIN_FILE = "data/train.txt"
-TEST_FILE = "data/test.txt"
-VALID_FILE = "data/valid.txt"
+DATA_DIR = "data/"
 
 VALID_FRAC = .01
 TEST_FRAC = .01
-VOCAB_SIZE = 10000
+VOCAB_SIZE = 40000
 
 chars = ""
 
@@ -27,6 +25,7 @@ def cleanup(chars):
 
 
 def limit_vocab(chars, vocab):
+    return chars
     def limit_word(word):
         if word in vocab:
             return word
@@ -34,6 +33,21 @@ def limit_vocab(chars, vocab):
             return "<unk>"
     words = chars.split(" ")
     return " ".join(map(limit_word, words))
+
+def save_data(chars, name):
+    _from = ""
+    _to = ""
+    i = 0
+    for line in chars.split("\n"):
+        i += 1
+        if i % 2 == 0:
+            _from += line + "\n"
+        else:
+            _to += line + "\n"
+    with open(DATA_DIR + name + "_from.txt", "w") as data:
+        data.write(_from)
+    with open(DATA_DIR + name + "_to.txt", "w") as data:
+        data.write(_to)
 
 
 # remove rare words
@@ -52,13 +66,6 @@ vocab = map(lambda (i): i[0], vocab[:VOCAB_SIZE])
 valid_end = int(len(chars) * VALID_FRAC)
 test_end = valid_end + int(len(chars) * TEST_FRAC)
 
-valid = limit_vocab(chars[:valid_end], vocab)
-test = limit_vocab(chars[valid_end:test_end], vocab)
-train = limit_vocab(chars[test_end:], vocab)
-
-with open(TRAIN_FILE, 'w+') as data:
-    data.write(train)
-with open(TEST_FILE, 'w+') as data:
-    data.write(test)
-with open(VALID_FILE, 'w+') as data:
-    data.write(valid)
+save_data(limit_vocab(chars[:valid_end], vocab), "valid")
+save_data(limit_vocab(chars[valid_end:test_end], vocab), "test")
+save_data(limit_vocab(chars[test_end:], vocab), "train")

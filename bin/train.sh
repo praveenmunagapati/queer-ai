@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-python ptb/ptb_word_lm.py --data_path=/data/ --model=small --num_gpus=0 --save_path=/data/
+python seq2seq/translate.py --data_dir=data --train_dir=data --from_train_data=data/train_from.txt --to_train_data=data/train_to.txt
