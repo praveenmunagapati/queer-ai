@@ -49,6 +49,9 @@
       .st6{font-family:'Arial'; font-style: italic; font-weight: 700;}
       .st7{font-size:40px;}
       .st8{font-size:13px;}
+      #Morph {
+        opacity: .7;
+      }
       .animated g {
         animation-duration: 1s;
         animation-direction: reverse;
@@ -56,22 +59,37 @@
         animation-timing-function: step-end;
         opacity: 0;
       }
-      #I1{
+      .flash > * {
+        animation-name: flash;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: step-end;
+        fill: #f23264;
+      }
+      @keyframes flash {
+        0% {
+          fill: #f23264;
+        }
+        50% {
+          fill: #000000;
+        }
+      }
+      .animated g:nth-child(1) {
         animation-name: frame1;
       }
-      #I2{
+      .animated g:nth-child(2) {
         animation-name: frame2;
       }
-      #I3{
+      .animated g:nth-child(3) {
         animation-name: frame3;
       }
-      #I4{
+      .animated g:nth-child(4) {
         animation-name: frame4;
       }
-      #I5{
+      .animated g:nth-child(5) {
         animation-name: frame5;
       }
-      #I6{
+      .animated g:nth-child(6) {
         animation-name: frame6;
       }
       @keyframes frame1 {
@@ -138,6 +156,38 @@
         }
       }
     </style>
+    <g id="Morph" class="animated">
+      <g id="M6">
+
+          <image style="overflow:visible;" width="466" height="466" id="bustQS" xlink:href="queerai-morph_1.jpg"  transform="matrix(0.9874 0 0 0.9874 429.1211 118.0283)">
+        </image>
+      </g>
+      <g id="M5">
+
+          <image style="overflow:visible;" width="466" height="466" id="ZyU2e6" xlink:href="queerai-morph_2.jpg"  transform="matrix(0.9881 0 0 0.9874 428.8274 118.0283)">
+        </image>
+      </g>
+      <g id="M4">
+
+          <image style="overflow:visible;" width="466" height="466" id="tJyaEl" xlink:href="queerai-morph_3.jpg"  transform="matrix(0.9881 0 0 0.9874 428.8274 118.0283)">
+        </image>
+      </g>
+      <g id="M3">
+
+          <image style="overflow:visible;" width="466" height="466" id="wA6A1Z" xlink:href="queerai-morph_4.jpg"  transform="matrix(0.9881 0 0 0.9874 428.8274 118.0283)">
+        </image>
+      </g>
+      <g id="M2">
+
+          <image style="overflow:visible;" width="466" height="466" id="_x32_LlkhI" xlink:href="queerai-morph_5.jpg"  transform="matrix(0.9881 0 0 0.9874 428.8274 118.0283)">
+        </image>
+      </g>
+      <g id="M1">
+
+          <image style="overflow:visible;" width="466" height="466" id="_x35_k4jcE" xlink:href="queerai-morph_6.jpg"  transform="matrix(0.9881 0 0 0.9874 428.8274 118.0283)">
+        </image>
+      </g>
+    </g>
     <g id="Circles">
       <circle class="st0" cx="460.8" cy="197.9" r="29.8"/>
       <circle class="st0" cx="661.9" cy="148.4" r="29.8"/>
@@ -430,7 +480,7 @@
         <text transform="matrix(1 0 0 1 133.0444 505.0587)" class="st3 st4 st5">ethics of embodiment</text>
       </g>
     </g>
-    <g id="Output">
+    <g id="Output" class="flash">
       <text transform="matrix(1 0 0 1 945.667 341.4918)"><tspan x="0" y="0" class="st6 st7">NEW</tspan><tspan x="0" y="42" class="st6 st7">EROTICISMS</tspan></text>
     </g>
     <g id="Title">
