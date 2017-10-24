@@ -25,7 +25,6 @@ def cleanup(chars):
 
 
 def limit_vocab(chars, vocab):
-    return chars
     def limit_word(word):
         if word in vocab:
             return word
