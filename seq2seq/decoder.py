@@ -1,32 +1,3 @@
-# Copyright 2015 The TensorFlow Authors. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# ==============================================================================
-
-"""Binary for training translation models and decoding from them.
-
-Running this program without --decode will download the WMT corpus into
-the directory specified as --data_dir and tokenize it in a very basic way,
-and then start training a model saving checkpoints to --train_dir.
-
-Running with --decode starts an interactive loop so you can see how
-the current checkpoint translates English sentences into French.
-
-See the following papers for more information on neural translation models.
- * http://arxiv.org/abs/1409.3215
- * http://arxiv.org/abs/1409.0473
- * http://arxiv.org/abs/1412.2007
-"""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -57,7 +28,7 @@ class Decoder():
     def __init__(self, sess):
         self.sess = sess
         self._buckets = [(5, 10), (10, 15), (20, 25), (40, 50)]
-        self.model = model.create_model(self.sess, self._buckets)
+        self.model = model.create_model(self.sess, self._buckets, True)
         self.model.batch_size = 1  # We decode one sentence at a time.
 
         # Load vocabularies.

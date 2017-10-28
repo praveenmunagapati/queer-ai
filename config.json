@@ -1,0 +1,17 @@
+{
+  "learning_rate": 0.5,
+  "learning_rate_decay_factor": 0.99,
+  "max_gradient_norm": 5.0,
+  "batch_size": 64,
+  "size": 1024,
+  "num_layers": 3,
+  "from_vocab_size": 40000,
+  "to_vocab_size": 40000,
+  "data_dir": "data",
+  "train_dir": "data",
+  "from_train_data": "data/train_from.txt",
+  "to_train_data": "data/train_to.txt",
+  "max_train_data_size": 0,
+  "steps_per_checkpoint": 200,
+  "use_fp16": false
+}

@@ -22,3 +22,4 @@ import seq2seq.data_utils
 import seq2seq.decoder
 import seq2seq.model
 import seq2seq.seq2seq_model
+import seq2seq.trainer

@@ -7,7 +7,7 @@ from util import attr_reader
 with open('config.json') as f:
     FLAGS = attr_reader.AttrReader(json.loads(f.read()))
 
-def create_model(session, buckets, forward_only = True):
+def create_model(session, buckets, forward_only):
   """Create translation model and initialize or load parameters in session."""
   dtype = tf.float16 if FLAGS.use_fp16 else tf.float32
   model = seq2seq_model.Seq2SeqModel(
