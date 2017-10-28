@@ -1,0 +1,6 @@
+model_checkpoint_path: "translate.ckpt-170600"
+all_model_checkpoint_paths: "translate.ckpt-169800"
+all_model_checkpoint_paths: "translate.ckpt-170000"
+all_model_checkpoint_paths: "translate.ckpt-170200"
+all_model_checkpoint_paths: "translate.ckpt-170400"
+all_model_checkpoint_paths: "translate.ckpt-170600"

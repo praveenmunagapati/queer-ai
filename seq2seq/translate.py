@@ -171,7 +171,6 @@ def train():
       print("Preparing WMT data in %s" % FLAGS.data_dir)
       from_train, to_train, from_dev, to_dev, _, _ = data_utils.prepare_wmt_data(
           FLAGS.data_dir, FLAGS.from_vocab_size, FLAGS.to_vocab_size)
-
   with tf.Session() as sess:
     # Create model.
     print("Creating %d layers of %d units." % (FLAGS.num_layers, FLAGS.size))

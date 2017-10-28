@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 PARSER = "html.parser"
 DATA_FILE = "literotica.csv"
 URL_TEMPLATE = "https://www.literotica.com/c/%s/%d-page"
-GENRES = ["science-fiction-fantasy", "bdsm-stories", "erotic-couplings", "celebrity-stories", "gay-sex-stories", "lesbian-sex-stories", "transsexuals-crossdressers", "non-human-stories"]
-PAGES_PER_GENRE = 2
+GENRES = ["science-fiction-fantasy", "mind-control", "loving-wives", "adult-romance", "masturbation-stories", "group-sex-stories", "first-time-sex-stories", "bdsm-stories", "chain-stories", "fetish-stories", "erotic-couplings", "celebrity-stories", "gay-sex-stories", "lesbian-sex-stories", "transsexuals-crossdressers", "non-human-stories"]
+PAGES_PER_GENRE = 100
 data = {}
 
 if os.path.isfile(DATA_FILE):

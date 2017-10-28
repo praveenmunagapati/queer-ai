@@ -13,4 +13,4 @@ name = "pypi"
 
 "bs4" = "*"
 matplotlib = "*"
-tensorflow = "==1.0.1"
+tensorflow_gpu = "==1.0.1"
