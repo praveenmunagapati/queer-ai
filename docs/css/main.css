@@ -349,7 +349,7 @@ img {
   outline: 0;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 458px) {
 	.ctas-input,
 	.ctas-button {
 		display: block;
@@ -361,12 +361,13 @@ img {
 	}
   .ctas-button.long {
     font-size: 16px;
+    padding: 0;
   }
 }
-@media (max-width: 396px){
+
+@media (max-width: 370px){
   .ctas-button.long {
     font-size: 13px;
-    padding: 0;
   }
 }
 
